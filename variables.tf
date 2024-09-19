@@ -64,7 +64,7 @@ variable "vnet_resource_group" {
   type        = string
   description = "VNET resource group. If empty, the same RG of the new resources to be used"
   validation {
-    condition     = can(regex("^[A-Za-z0-9-_]*$", var.resource_group))
+    condition     = can(regex("^[A-Za-z0-9-_]*$", var.vnet_resource_group))
     error_message = "Name should contain only letters, numbers, underscore and hyphen."
   }
 }
