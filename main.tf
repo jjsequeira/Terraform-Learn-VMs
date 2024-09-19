@@ -29,7 +29,7 @@ resource "azurerm_network_interface" "vm_nic" {
 }
  
 # Define the virtual machine
-resource "azurerm_virtual_machine" "${var.resource_name}" {
+resource "azurerm_virtual_machine" "virtual_machine" {
   name                = var.resource_name
   resource_group_name = data.azurerm_resource_group.resource_group.name
   location            = data.azurerm_resource_group.resource_group.location

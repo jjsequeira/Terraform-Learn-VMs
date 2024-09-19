@@ -50,12 +50,12 @@ variable "location" {
   description = "Location for the resource, if empty then Resource Group location will be used. Changing this forces a new resource to be created. Changing this forces a new resource to be created"
 }
 
-variables "vnet_name" {
+variable "vnet_name" {
   type        = string
   description = "VNET where the VM will be deployed"
 }
 
-variables "subnet_name" {
+variable "subnet_name" {
   type        = string
   description = "Subnet where the VM will be deployed"
 }
@@ -66,7 +66,6 @@ variable "vnet_resource_group" {
   validation {
     condition     = can(regex("^[A-Za-z0-9-_]*$", var.resource_group))
     error_message = "Name should contain only letters, numbers, underscore and hyphen."
-    default   = var.resource_group
   }
 }
 
